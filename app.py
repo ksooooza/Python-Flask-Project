@@ -31,15 +31,20 @@ Person(name='John', age=27, pets="Mollie(RIP)").save()
 app = Flask(__name__)
 
 @app.route('/person/', methods=['GET', 'POST'])
-# @app.route('/person/<id>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/person/<id>', methods=['GET', 'PUT', 'DELETE'])
 def endpoint(id=None):
     if request.method == 'GET':
         if id:
-            jsonify(model_to_dict(Person.get(Person.id == id)))
+            return jsonify(model_to_dict(Person.get(Person.id == id)))
         else:
             people_list = []
             for person in Person.select():
                 people_list.append(model_to_dict(person))
             return jsonify(people_list)
+
+    if request.method == 'PUT':
+        body = request.get_json()
+        Person.update(body).where(Person.id == id).execute()
+        return "Person " + str(id) + " has been updated."
 
 app.run(debug=True, port=2000)
