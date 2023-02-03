@@ -16,3 +16,16 @@ class Person(BaseModel):
 db.connect()
 db.drop_tables([FamBam])
 db.create_tables([FamBam])
+
+Person(name='Lenore', age=69).save()
+Person(name='Mark', age=69).save()
+Person(name='Matthew', age=39).save()
+Person(name='Claudia', age=37).save()
+Person(name='Timothy', age=36).save()
+Person(name='Ashley', age=36).save()
+Person(name='Daniel', age=34).save()
+Person(name='Renee', age=31).save()
+Person(name='Katherine', age=25).save()
+Person(name='John', age=27).save()
+
+app = Flask(__name__)
