@@ -47,4 +47,9 @@ def endpoint(id=None):
         Person.update(body).where(Person.id == id).execute()
         return "Person " + str(id) + " has been updated."
 
+    if request.method == 'POST':
+        new_person = dict_to_model(Person, request.get_json())
+        new_person.save()
+        return jsonify({"success": True})
+
 app.run(debug=True, port=2000)
