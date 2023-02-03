@@ -52,4 +52,8 @@ def endpoint(id=None):
         new_person.save()
         return jsonify({"success": True})
 
+    if request.method == 'DELETE':
+        Person.delete().where(Person.id == id).execute()
+        return "Person " + str(id) + " deleted."
+
 app.run(debug=True, port=2000)
