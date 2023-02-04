@@ -61,7 +61,9 @@ Example of returned content:
 ### Future Updates:
 <br />
 - Creating more than one table/model for the database
+<br />
 - Having a model with a many-to-one or a one-to-many relationship
+<br />
 - Try using web scraping to seed my database
 
 ---
@@ -69,4 +71,5 @@ Example of returned content:
 ### Technologies Used:
 <br />
 - Flask, Peewee, Python
+<br />
 - Routing, Postman, CRUD
