@@ -4,10 +4,12 @@ This project is an API built using Python, Peewee, and Flask, with full CRUD fun
 
 ---
 ### Model:
-`class Person(BaseModel):
+```
+class Person(BaseModel):
     name = CharField()
     age = IntegerField()
-    pets = CharField()`
+    pets = CharField()
+```
 <br />
 ---
 ### Routes:
@@ -38,6 +40,7 @@ Example of returned content:
 /person/<id>: returns a single person by their ID
 <br />
 Example of returned content:
+    
 ```
   {
     "age": 34,
