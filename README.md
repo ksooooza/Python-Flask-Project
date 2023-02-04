@@ -11,11 +11,11 @@ class Person(BaseModel):
     age = IntegerField()
     pets = CharField()
 ```
-<br />
+
 ---
-<br />
+
 ### Routes:
-<br />
+
 /person/: returns all of the people in the API
 <br />
 Example of returned content:
@@ -55,17 +55,17 @@ Example of returned content:
     "pets": "Tin tin and Kane"
   }
 ```
-<br />
+
 ---
-<br />
+
 ### Future Updates:
 <br />
 - Creating more than one table/model for the database
 - Having a model with a many-to-one or a one-to-many relationship
 - Try using web scraping to seed my database
-<br />
+
 ---
-<br />
+
 ### Technologies Used:
 <br />
 - Flask, Peewee, Python
